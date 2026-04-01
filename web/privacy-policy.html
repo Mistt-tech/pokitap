@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy – Pokitap</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky: #87CEEB;
+    --cloud: #f5f9ff;
+    --green: #4caf50;
+    --yellow: #FFD54F;
+    --dark: #1a2a1a;
+    --text: #2c3e2c;
+    --muted: #6b7c6b;
+    --card: #ffffff;
+    --radius: 18px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Nunito Sans', sans-serif;
+    background: var(--sky);
+    min-height: 100vh;
+    color: var(--text);
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Animated clouds background */
+  .bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background: linear-gradient(180deg, #b8e3f5 0%, #d4effd 40%, #e8f5e9 100%);
+  }
+  .cloud {
+    position: absolute;
+    background: white;
+    border-radius: 50px;
+    opacity: 0.7;
+    animation: drift linear infinite;
+  }
+  .cloud::before, .cloud::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+  }
+  .c1 { width: 120px; height: 40px; top: 12%; animation-duration: 28s; animation-delay: 0s; left: -140px; }
+  .c1::before { width: 50px; height: 50px; top: -25px; left: 20px; }
+  .c1::after  { width: 35px; height: 35px; top: -18px; left: 55px; }
+  .c2 { width: 90px; height: 30px; top: 28%; animation-duration: 38s; animation-delay: -12s; left: -110px; opacity: 0.5; }
+  .c2::before { width: 40px; height: 40px; top: -20px; left: 15px; }
+  .c2::after  { width: 28px; height: 28px; top: -14px; left: 42px; }
+  .c3 { width: 160px; height: 50px; top: 55%; animation-duration: 45s; animation-delay: -20s; left: -180px; opacity: 0.4; }
+  .c3::before { width: 65px; height: 65px; top: -32px; left: 25px; }
+  .c3::after  { width: 45px; height: 45px; top: -22px; left: 80px; }
+  .c4 { width: 80px; height: 28px; top: 72%; animation-duration: 32s; animation-delay: -6s; left: -100px; opacity: 0.55; }
+  .c4::before { width: 35px; height: 35px; top: -17px; left: 12px; }
+  .c4::after  { width: 25px; height: 25px; top: -12px; left: 38px; }
+
+  @keyframes drift { from { transform: translateX(0); } to { transform: translateX(110vw); } }
+
+  /* Ground strip */
+  .ground {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 60px;
+    background: linear-gradient(180deg, #66bb6a 0%, #388e3c 100%);
+    z-index: 0;
+  }
+  .ground::before {
+    content: '';
+    position: absolute;
+    top: -10px; left: 0; right: 0;
+    height: 20px;
+    background: #81c784;
+    border-radius: 50% 50% 0 0 / 10px 10px 0 0;
+  }
+
+  /* Main layout */
+  .wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 100px;
+  }
+
+  /* Header */
+  header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .logo-area {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .bird-icon {
+    width: 72px;
+    height: 72px;
+    background: var(--yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    box-shadow: 0 6px 0 #e6a800, 0 8px 20px rgba(0,0,0,0.15);
+    animation: bob 2s ease-in-out infinite;
+  }
+  @keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  h1 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 2.2rem;
+    color: var(--dark);
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+  h1 span { color: var(--green); }
+  .subtitle {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-top: 4px;
+    font-weight: 600;
+  }
+
+  /* Card */
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 32px 36px;
+    box-shadow: 0 4px 0 rgba(0,0,0,0.08), 0 12px 40px rgba(0,0,0,0.1);
+    margin-bottom: 16px;
+  }
+
+  .card h2 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card h2::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--green);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .card p, .card li {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text);
+  }
+  .card ul { padding-left: 20px; }
+  .card li { margin-bottom: 4px; }
+  .card p + p { margin-top: 10px; }
+
+  .updated {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  .contact-box {
+    background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+    border: 2px solid #c8e6c9;
+    border-radius: 12px;
+    padding: 18px 24px;
+    margin-top: 12px;
+    font-size: 0.9rem;
+  }
+  .contact-box a { color: var(--green); font-weight: 700; text-decoration: none; }
+  .contact-box a:hover { text-decoration: underline; }
+
+  footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--muted);
+    font-weight: 600;
+    margin-top: 32px;
+  }
+
+  @media (max-width: 480px) {
+    .card { padding: 24px 20px; }
+    h1 { font-size: 1.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg">
+  <div class="cloud c1"></div>
+  <div class="cloud c2"></div>
+  <div class="cloud c3"></div>
+  <div class="cloud c4"></div>
+</div>
+<div class="ground"></div>
+
+<div class="wrapper">
+  <header>
+    <div class="logo-area">
+      <div class="bird-icon">🐦</div>
+      <h1>Poki<span>tap</span></h1>
+      <p class="subtitle">Privacy Policy</p>
+    </div>
+  </header>
+
+  <p class="updated">Last updated: April 1, 2026</p>
+
+  <div class="card">
+    <h2>Overview</h2>
+    <p>Pokitap ("the Game") is a free mobile game developed by an independent developer. This Privacy Policy explains what information is collected, how it is used, and your rights regarding your data.</p>
+    <p>By playing Pokitap, you agree to the terms described in this policy.</p>
+  </div>
+
+  <div class="card">
+    <h2>Information We Collect</h2>
+    <p>Pokitap does not directly collect any personally identifiable information. However, the following third-party services integrated in the Game may collect certain data:</p>
+    <ul>
+      <li><strong>Unity Ads</strong> – used to display optional rewarded ads. Unity may collect device identifiers and usage data to serve relevant ads. See <a href="https://unity.com/legal/privacy-policy" target="_blank" style="color:var(--green);font-weight:700;">Unity's Privacy Policy</a>.</li>
+      <li><strong>Leaderboard service (jsonbin.io)</strong> – stores your high score anonymously. No name or personal data is required.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>How Information Is Used</h2>
+    <ul>
+      <li>To display rewarded advertisements (Unity Ads)</li>
+      <li>To store and display global high scores anonymously</li>
+      <li>To improve gameplay experience</li>
+    </ul>
+    <p>We do not sell, rent, or share your personal data with any third parties beyond the services listed above.</p>
+  </div>
+
+  <div class="card">
+    <h2>Advertising</h2>
+    <p>Pokitap shows rewarded ads powered by Unity Ads. Ads are only shown when the player chooses to watch them (e.g., to revive). We do not show interstitial or banner ads automatically.</p>
+    <p>Unity Ads may use your device's advertising ID to serve relevant ads. You can opt out of personalized ads through your device settings (Google Settings → Ads → Opt out of Ads Personalization).</p>
+  </div>
+
+  <div class="card">
+    <h2>Children's Privacy</h2>
+    <p>Pokitap is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided personal information, please contact us and we will take steps to remove it.</p>
+  </div>
+
+  <div class="card">
+    <h2>Data Retention & Security</h2>
+    <p>Leaderboard scores are stored anonymously and can be cleared upon request. We take reasonable precautions to protect data, but no system is 100% secure.</p>
+  </div>
+
+  <div class="card">
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated date. Continued use of the Game after changes constitutes acceptance of the new policy.</p>
+  </div>
+
+  <div class="card">
+    <h2>Contact</h2>
+    <div class="contact-box">
+      If you have any questions about this Privacy Policy, please contact us at:<br><br>
+      📧 <a href="mailto:kanohagito87@gmail.com">kanohagito87@gmail.com</a>
+    </div>
+  </div>
+
+  <footer>© 2026 Pokitap · Independent Game · All rights reserved</footer>
+</div>
+
+</body>
+</html>
